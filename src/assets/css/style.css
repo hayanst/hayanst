@@ -5,10 +5,27 @@
 }
 
 body {
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: "Noto Sans KR", sans-serif;
   line-height: 1.6;
   color: #333;
   background-color: #fafafa;
+}
+
+.content-wrap {
+  height: 100vh;
+  margin: 0;
+  scroll-behavior: smooth;
+  scroll-snap-type: y proximity;
+  overflow-y: scroll;
+}
+
+.content-wrap section {
+  min-height: 100vh;
+  scroll-snap-align: start;
+}
+.content-wrap header,
+.content-wrap footer {
+  scroll-snap-align: start;
 }
 
 /* 컨테이너 공통 */
@@ -48,7 +65,7 @@ body {
 
 /* 히어로 */
 .hero {
-  background: url('../images/background.webp') center no-repeat;
+  background: url("../images/background.webp") center no-repeat;
   background-color: #000;
   background-size: min(120%, 1000px);
   height: 80vh;
@@ -150,6 +167,15 @@ body {
   width: 100%;
 }
 
+/* 푸터 */
+.footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1.5rem 0;
+  font-size: 0.9rem;
+}
+
 .bottom-btns {
   position: fixed;
   bottom: 24px;
@@ -170,12 +196,4 @@ body {
 .naver-talk-img {
   width: 24px;
   height: 24px;
-}
-/* 푸터 */
-.footer {
-  background: #333;
-  color: #fff;
-  text-align: center;
-  padding: 1.5rem 0;
-  font-size: 0.9rem;
 }
