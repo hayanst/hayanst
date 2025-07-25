@@ -61,13 +61,14 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   </head>
   <body>
     <div class="content-wrap">
       <!-- 헤더 -->
       <header class="header">
         <div class="container">
-          <h1 class="logo">하얀스튜디오</h1>
+          <h1>하얀스튜디오</h1>
           <nav class="nav">
             <ul>
               <li><a href="#about">소개</a></li>
@@ -105,16 +106,17 @@
 
       <!-- 갤러리 -->
       <section id="gallery" class="gallery">
-        <div class="container">
-          <h2>포트폴리오</h2>
-          <div class="gallery-grid">
-            <img src="assets/images/photo1.jpg" alt="스튜디오 사진 1" />
-            <img src="assets/images/photo2.jpg" alt="스튜디오 사진 2" />
-            <img src="assets/images/photo3.jpg" alt="스튜디오 사진 3" />
-            <img src="assets/images/photo4.jpg" alt="스튜디오 사진 4" />
-            <img src="assets/images/photo5.jpg" alt="스튜디오 사진 5" />
-            <img src="assets/images/photo6.jpg" alt="스튜디오 사진 6" />
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="assets/images/slide1.webp"></div>
+            <div class="swiper-slide"><img src="assets/images/slide2.webp"></div>
+            <div class="swiper-slide"><img src="assets/images/slide3.webp"></div>
           </div>
+          <!-- 네비 버튼 -->
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <!-- 페이지네이션 -->
+          <div class="swiper-pagination"></div>
         </div>
       </section>
 
@@ -124,9 +126,10 @@
           <h2>예약 및 문의</h2>
           <p>촬영 예약 및 상담은 아래 연락처로 문의해주세요.</p>
           <p class="contact-info">
-            전화: <a href="tel:010-1234-5678">010-1234-5678</a> | 이메일:
+            전화: <a href="tel:0313836622">031-383-6622</a> | 이메일:
             <a href="mailto:studio@example.com">studio@example.com</a>
           </p>
+          <p>🕘 평일 09:10 ~ 19:00 | 토요일 09:00 ~ 17:00</p>
         </div>
         <div class="map-location-wrap">
           <img src="assets/images/map_location.webp" alt="map-location" />
@@ -153,5 +156,15 @@
       >
       <a href="tel:0313836622" class="btn">📞 전화문의</a>
     </div>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+      const swiper = new Swiper('.swiper', {
+      loop: true,
+      autoplay: { delay: 5000 },
+      speed: 1000,
+      pagination: { el: '.swiper-pagination', clickable: true },
+      navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+    });
+    </script>
   </body>
 </html>

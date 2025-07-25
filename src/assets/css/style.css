@@ -3,6 +3,10 @@
   padding: 0;
   box-sizing: border-box;
 }
+:root {
+  --swiper-theme-color: #fff !important;
+  --swiper-navigation-size: 48px !important;
+}
 
 body {
   font-family: "Noto Sans KR", sans-serif;
@@ -37,14 +41,13 @@ body {
 
 /* 헤더 */
 .header {
-  background: white;
-  border-bottom: 1px solid #eee;
   padding: 1rem 0;
-}
-
-.header .logo {
-  font-size: 1.5rem;
-  font-weight: 700;
+  /* position: fixed;
+  top: 0;
+  container-type: scroll-state;
+  width: 100vw;
+  background: transparent;
+  color: #fff; */
 }
 
 .nav ul {
@@ -114,29 +117,13 @@ body {
 
 /* 갤러리 */
 .gallery {
-  padding: 4rem 0;
+  /* padding: 4rem 0; */
   background: #fff;
 }
 
 .gallery h2 {
   text-align: center;
   margin-bottom: 2rem;
-}
-
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 1rem;
-}
-
-.gallery-grid img {
-  width: 100%;
-  border-radius: 10px;
-  transition: transform 0.3s ease;
-}
-
-.gallery-grid img:hover {
-  transform: scale(1.05);
 }
 
 /* 예약/문의 */
@@ -196,4 +183,23 @@ body {
 .naver-talk-img {
   width: 24px;
   height: 24px;
+}
+
+.swiper {
+  background-color: rgba(0,0,0,0.9);
+  height: 800px;
+}
+
+.swiper-slide {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
+.swiper-slide img {
+  width: 80%;
+}
+
+.swiper-pagination-bullet {
+  background-color: #fff !important;
 }
