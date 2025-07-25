@@ -1,0 +1,181 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fafafa;
+}
+
+/* 컨테이너 공통 */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* 헤더 */
+.header {
+  background: white;
+  border-bottom: 1px solid #eee;
+  padding: 1rem 0;
+}
+
+.header .logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+}
+
+.nav a:hover {
+  color: #acacac;
+}
+
+/* 히어로 */
+.hero {
+  background: url('../images/background.webp') center no-repeat;
+  background-color: #000;
+  background-size: min(120%, 1000px);
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  background-attachment: fixed;
+}
+
+.hero-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  background: #000;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #282727;
+}
+
+/* 소개 섹션 */
+.about {
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.about h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+/* 갤러리 */
+.gallery {
+  padding: 4rem 0;
+  background: #fff;
+}
+
+.gallery h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.gallery-grid img {
+  width: 100%;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.05);
+}
+
+/* 예약/문의 */
+.contact {
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.contact h2 {
+  margin-bottom: 1rem;
+}
+
+.contact-info a {
+  color: #ff6b6b;
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+.map-location-wrap {
+  margin: 2rem auto;
+  width: min(100%, 800px);
+}
+
+.map-location-wrap img {
+  width: 100%;
+}
+
+.bottom-btns {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9;
+  display: flex;
+  align-items: end;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.bottom-btns a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.naver-talk-img {
+  width: 24px;
+  height: 24px;
+}
+/* 푸터 */
+.footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1.5rem 0;
+  font-size: 0.9rem;
+}
