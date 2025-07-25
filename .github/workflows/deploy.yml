@@ -2,7 +2,7 @@ name: Deploy to HostingKR
 
 on:
   push:
-    branches: [ main ]  # main 브랜치 푸시 시 배포
+    branches: [main] # main 브랜치 푸시 시 배포
 
 jobs:
   deploy:
@@ -13,18 +13,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # 2. (선택) Node.js 환경 설정 (Vite 같은 빌드 툴 쓸 경우)
-      # - name: Setup Node.js
-      #   uses: actions/setup-node@v4
-      #   with:
-      #     node-version: 22
-      #
-      # - name: Install dependencies
-      #   run: npm install
-      #
-      # - name: Build project
-      #   run: npm run build
-
       # 3. SFTP로 호스팅 서버에 배포
       - name: Deploy via SFTP
         uses: wlixcc/SFTP-Deploy-Action@v1.2.4
@@ -33,8 +21,8 @@ jobs:
           port: ${{ secrets.SFTP_PORT }}
           username: ${{ secrets.SFTP_USER }}
           password: ${{ secrets.SFTP_PASSWORD }}
-          local_path: ./   # 배포할 로컬 경로 (현재 루트)
-          remote_path: /home/yourdomain/public_html/  # 호스팅KR의 웹 루트 경로
+          local_path: ./src # 배포할 로컬 경로 (현재 루트)
+          remote_path: /home/yourdomain/public_html/ # 호스팅KR의 웹 루트 경로
           # 빌드 결과물만 배포할 경우: local_path: ./dist
 
       # 4. 캐시 무효화를 위해 권한 및 타임스탬프 조정 (선택)

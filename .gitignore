@@ -1,0 +1,15 @@
+# macOS 관련 불필요 파일
+.DS_Store
+
+# Node 환경 대비 (Vite나 빌드툴 추가 시)
+node_modules/
+dist/
+
+# 환경 설정/캐시 파일
+.env
+.env.local
+*.log
+
+# 에디터/IDE 관련
+.vscode/
+.idea/
