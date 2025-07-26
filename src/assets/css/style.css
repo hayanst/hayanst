@@ -133,16 +133,20 @@ body {
   margin-bottom: 1.5rem;
 }
 
+.review {
+  font-size: 1.5rem;
+}
+
 .review::before {
   content: '"';
-  font-size: 2rem;
+  font-size: 3rem;
   vertical-align: top;
   line-height: 1;
 }
 
 .review::after {
   content: '"';
-  font-size: 2rem;
+  font-size: 3rem;
   vertical-align: bottom;
   line-height: 1;
 }
@@ -232,7 +236,7 @@ body {
 .slide-bg {
   width: 100%;
   height: 100%;
-  background-size: cover;
+  background-size: cover !important;
 }
 .slide-bg.image-1 {
   background: url('/assets/images/slide1.webp') center no-repeat;
