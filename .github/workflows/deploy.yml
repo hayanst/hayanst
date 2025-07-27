@@ -2,29 +2,22 @@ name: Deploy to HostingKR
 
 on:
   push:
-    branches: [main] # main 브랜치 푸시 시 배포
+    branches: [main] # main 브랜치에 푸시될 때 실행
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
-      # 1. 소스코드 가져오기
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # 3. SFTP로 호스팅 서버에 배포
-      - name: Deploy via SFTP
-        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+      - name: Deploy via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4
         with:
-          server: ${{ secrets.SFTP_HOST }}
-          port: ${{ secrets.SFTP_PORT }}
-          username: ${{ secrets.SFTP_USER }}
-          password: ${{ secrets.SFTP_PASSWORD }}
-          local_path: ./src # 배포할 로컬 경로 (현재 루트)
-          remote_path: /home/yourdomain/public_html/ # 호스팅KR의 웹 루트 경로
-          # 빌드 결과물만 배포할 경우: local_path: ./dist
-
-      # 4. 캐시 무효화를 위해 권한 및 타임스탬프 조정 (선택)
-      - name: Clear cache (optional)
-        run: echo "Deployed and cache cleared"
+          server: ${{ secrets.FTP_HOST }} # ex) hlwemqth.hostingkr.com
+          username: ${{ secrets.FTP_USER }} # FTP 아이디
+          password: ${{ secrets.FTP_PASSWORD }} # FTP 비밀번호
+          port: 21 # FTP는 기본 21
+          local-dir: ./src # 배포할 로컬 폴더
+          server-dir: /home/hayanst/public_html # 호스팅KR 웹 루트 경로
+          protocol: ftp # 기본 FTP (필요하면 ftps로 바꿀 수 있음)
