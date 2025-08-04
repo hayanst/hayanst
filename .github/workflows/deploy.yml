@@ -15,7 +15,7 @@ jobs:
         run: yarn install
 
       - name: Deploy via SFTP
-        uses: appleboy/sftp-action@v0.1.6
+        uses: appleboy/sftp-action@v0.1.11
         with:
           host: ${{ secrets.FTP_HOST }} # ex) hlwemqth.hostingkr.com
           username: ${{ secrets.FTP_USER }} # FTP 아이디
