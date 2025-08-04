@@ -22,4 +22,4 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }} # FTP 비밀번호
           port: 22
           source: "src/*"
-          server-dir: "public_html/" # 호스팅KR 웹 루트 경로
+          target: "public_html/" # 호스팅KR 웹 루트 경로
