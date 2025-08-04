@@ -14,12 +14,13 @@ jobs:
       - name: Install dependencies
         run: yarn install
 
-      - name: Deploy via SFTP
-        uses: appleboy/scp-action@v0.1.0
+      - name: Deploy via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
-          host: ${{ secrets.FTP_HOST }} # ex) hlwemqth.hostingkr.com
+          server: ${{ secrets.FTP_HOST }} # ex) hlwemqth.hostingkr.com
           username: ${{ secrets.FTP_USER }} # FTP 아이디
           password: ${{ secrets.FTP_PASSWORD }} # FTP 비밀번호
-          port: 22
-          source: "src/*"
-          target: "public_html/" # 호스팅KR 웹 루트 경로
+          protocol: ftp
+          port: 21
+          local-dir: src
+          server-dir: public_html/ # 호스팅KR 웹 루트 경로
