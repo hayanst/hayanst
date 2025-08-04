@@ -11,13 +11,15 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Deploy via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Deploy via SFTP
+        uses: appleboy/sftp-action@v0.1.6
         with:
-          server: ${{ secrets.FTP_HOST }} # ex) hlwemqth.hostingkr.com
+          host: ${{ secrets.FTP_HOST }} # ex) hlwemqth.hostingkr.com
           username: ${{ secrets.FTP_USER }} # FTP 아이디
           password: ${{ secrets.FTP_PASSWORD }} # FTP 비밀번호
-          port: 21 # FTP는 기본 21
-          local-dir: ./src/ # 배포할 로컬 폴더
-          server-dir: public_html/ # 호스팅KR 웹 루트 경로
-          protocol: ftp # 기본 FTP (필요하면 ftps로 바꿀 수 있음)
+          port: 22
+          source: "src/*"
+          server-dir: "public_html/" # 호스팅KR 웹 루트 경로
