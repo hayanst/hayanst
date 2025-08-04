@@ -22,5 +22,5 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }} # FTP 비밀번호
           protocol: ftp
           port: 21
-          local-dir: src/
+          local-dir: ./
           server-dir: public_html/ # 호스팅KR 웹 루트 경로
